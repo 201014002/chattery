@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058735138217",
+    "project_id": "chattery-1ecaf",
+    "storage_bucket": "chattery-1ecaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058735138217:android:503a4e4b65dee71ccc90b8",
+        "android_client_info": {
+          "package_name": "com.tayba.chattery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeBp9h8RDI9Qq_-7e21Sn8sCI5nJfgaRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
