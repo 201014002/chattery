@@ -8,6 +8,7 @@ import 'package:get_it/get_it.dart';
 import 'package:chattery/services/navigation_service.dart';
 import 'package:chattery/services/media_service.dart';
 import 'package:chattery/services/cloud_storage_service.dart';
+import 'package:chattery/services/database_service.dart';
 
 class SplashPage extends StatefulWidget {
   final VoidCallback onInitializationComplete;
@@ -21,8 +22,12 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    _setup().then(
-      (_) => widget.onInitializationComplete(),
+    Future.delayed(Duration(seconds: 1)).then(
+      (_) {
+        _setup().then(
+          (_) => widget.onInitializationComplete(),
+        );
+      },
     );
   }
 
@@ -31,8 +36,9 @@ class _SplashPageState extends State<SplashPage> {
     return MaterialApp(
       title: 'Chattery',
       theme: ThemeData(
-          scaffoldBackgroundColor: Color.fromRGBO(36, 35, 49, 1.0),
-          colorScheme: ColorScheme.dark()),
+        scaffoldBackgroundColor: Color.fromRGBO(36, 35, 49, 1.0),
+        colorScheme: ColorScheme.dark(),
+      ),
       home: Scaffold(
         body: Center(
           child: Container(
@@ -65,6 +71,9 @@ class _SplashPageState extends State<SplashPage> {
     );
     GetIt.instance.registerSingleton<CloudStorageService>(
       CloudStorageService(),
+    );
+    GetIt.instance.registerSingleton<DatabaseService>(
+      DatabaseService(),
     );
   }
 }
